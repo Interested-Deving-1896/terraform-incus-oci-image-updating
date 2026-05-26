@@ -1,37 +1,75 @@
-# A Terraform/Tofu module for updating Incus oci images at apply time
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# terraform-incus-oci-image-updating
 
-When using the incus provider's `resource.incus_image`, an image is downloaded and named with it's fingerprint by default. If you used a docker tag such as `latest`, the incus image doesn't seem to be updated even if a new image is pushed to the remote.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/terraform-incus-oci-image-updating)
 
-Using this module ensures that each time you hit `tofu apply`, the docker hub api is checked for a newer fingerprint and the image resource is replaced if necessary.
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-To use, replace e.g:
+## Architecture
+
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
+
+## Install
+
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
+```bash
+git clone https://github.com/Interested-Deving-1896/terraform-incus-oci-image-updating.git
+cd terraform-incus-oci-image-updating
+```
+
+## Usage
+
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/terraform-incus-oci-image-updating`](https://github.com/Interested-Deving-1896/terraform-incus-oci-image-updating) and mirrored through:
 
 ```
-resource "incus_image" "go-vod" {
-  source_image  = {
-    remote = "docker"
-    name = "radialapps/go-vod"
-  }
-}
-
-resource "incus_instance" "go-vod" {
-    name      = "go-vod"
-    image     = resource.incus_image.go-vod.fingerprint
-}
+Interested-Deving-1896/terraform-incus-oci-image-updating  ──►  OpenOS-Project-OSP/terraform-incus-oci-image-updating  ──►  OpenOS-Project-Ecosystem-OOC/terraform-incus-oci-image-updating
 ```
 
-with:
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-## Example Usage:
+## Contributors
 
-```
-module "go-vod_image" {
-  source = "github.com/PriceChild/terraform-incus-docker-image-updating?ref=0.0.2"
-  docker_image = "radialapps/go-vod"
-}
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-resource "incus_instance" "go-vod" {
-    name      = "go-vod"
-    image     = module.go-vod_image.fingerprint
-}
-```
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/terraform-incus-oci-image-updating/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
